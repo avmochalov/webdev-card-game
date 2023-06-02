@@ -3,7 +3,11 @@
         "eslint": "^8.41.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^4.2.1",
-        "prettier": "^2.8.8"
+        "prettier": "^2.8.8",
+        "stylelint": "^15.6.2",
+        "stylelint-config-prettier": "^9.0.5",
+        "stylelint-config-standard": "^33.0.0",
+        "stylelint-prettier": "^3.0.0"
     },
     "name": "webdev-card-game",
     "description": "",
@@ -12,7 +16,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write ./*.js && prettier --write ./**/*.js",
-        "lint:js": "eslint ./**/*.js && eslint ./*.js"
+        "lint:js": "eslint ./**/*.js && eslint ./*.js",
+        "lint:scss": "stylelint ./*.scss"
     },
     "author": "",
     "license": "ISC"

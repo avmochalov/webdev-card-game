@@ -5,5 +5,5 @@ export function thirdLevelPageRenderer({ app }) {
     </div>
 </div>`
 
-    app.innerHTML = appHtml;
+    app.innerHTML = appHtml
 }

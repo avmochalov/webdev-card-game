@@ -1,4 +1,4 @@
-import { renderApp } from '../index.js'
+import { renderApp } from '../index.js';
 
 export function startPageRenderer({ app }) {
     const appHtml = `<div class="level_choice__wrapper">
@@ -16,17 +16,17 @@ export function startPageRenderer({ app }) {
         </div>
         <button type="submit" class="start_button">Старт</button>
     </div>
-</div>`
+</div>`;
 
-    app.innerHTML = appHtml
+    app.innerHTML = appHtml;
 
     for (const input of document.querySelectorAll('input')) {
         input.addEventListener('click', () => {
-            localStorage.setItem('Level', `${input.value}`)
-        })
+            localStorage.setItem('Level', `${input.value}`);
+        });
     }
 
     document.querySelector('.start_button').addEventListener('click', () => {
-        renderApp(localStorage.getItem('Level'))
-    })
+        renderApp(localStorage.getItem('Level'));
+    });
 }

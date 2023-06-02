@@ -3,7 +3,7 @@ export function secondLevelPageRenderer({ app }) {
     <div class="level_choice">
         <p class="level_choice__text">Уровень 2</p>
     </div>
-</div>`
+</div>`;
 
-    app.innerHTML = appHtml
+    app.innerHTML = appHtml;
 }

@@ -9,6 +9,16 @@ import { firstLevelPageRenderer } from './components/first-level.js';
 import { secondLevelPageRenderer } from './components/second-level.js';
 import { thirdLevelPageRenderer } from './components/third-level.js';
 
+const suitArray = ['Ч', 'П', 'Б', 'К'];
+const cardValueArray = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'];
+export const cards = [];
+
+for (const suit of suitArray) {
+    for (const value of cardValueArray) {
+        cards.push(suit + value);
+    }
+}
+
 export function renderApp(page) {
     const app = document.getElementById('app');
     if (page === START_PAGE) {

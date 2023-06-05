@@ -17,7 +17,7 @@ export function thirdLevelPageRenderer({ app }) {
         () =>
             (document.querySelector('.card_field').innerHTML =
                 cardsTableGenerate(18)),
-        5000
+        2000
     );
     headerRenderer({ element: document.querySelector('.header_component') });
 }

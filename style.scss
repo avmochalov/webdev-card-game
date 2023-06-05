@@ -13,6 +13,11 @@ body {
     background: #004980;
 }
 
+.game_wrapper {
+    padding-left: calc(50vw - 490px);
+    padding-right: calc(50vw - 490px);
+}
+
 .level_choice {
     display: flex;
     flex-direction: column;
@@ -90,4 +95,49 @@ body {
     font-size: 24px;
     line-height: 32px;
     color: #ffffff;
+}
+
+.restart_button {
+    cursor: pointer;
+    font-family: 'StratosSkyeng';
+    border: none;
+    width: 246px;
+    height: 50px;
+    background: #7ac100;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 22px;
+}
+
+.timer {
+    display: flex;
+    &_name {
+        text-align: right;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #ffffff;
+    }
+    &_counter {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        color: #ffffff;
+    }
+}
+
+.point::before {
+    content: '.';
 }

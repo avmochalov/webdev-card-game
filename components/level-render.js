@@ -1,11 +1,11 @@
 import { cardsTableGenerate } from './cards-table.js';
 import { headerRenderer } from './header.js';
-export function secondLevelPageRenderer({ app }) {
+export function levelPageRenderer({ app }) {
     const appHtml = `<div class="header_component"></div>
     <div class="card_field"> </div>
 `;
     let backSideCards = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 6 * Number(localStorage.getItem('Level')); i++) {
         backSideCards.push(
             '<img src="./pic/backside.svg" alt="card-backside">'
         );
@@ -16,7 +16,7 @@ export function secondLevelPageRenderer({ app }) {
     setTimeout(
         () =>
             (document.querySelector('.card_field').innerHTML =
-                cardsTableGenerate(12)),
+                cardsTableGenerate(backSideCards.length)),
         2000
     );
     headerRenderer({ element: document.querySelector('.header_component') });

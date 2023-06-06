@@ -27,6 +27,6 @@ export function startPageRenderer({ app }) {
     }
 
     document.querySelector('.start_button').addEventListener('click', () => {
-        renderApp(localStorage.getItem('Level'));
+        renderApp('level');
     });
 }

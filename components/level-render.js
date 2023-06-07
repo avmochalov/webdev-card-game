@@ -37,6 +37,6 @@ export function levelPageRenderer({ app }) {
                 }
             });
         }
-    }, 2000);
+    }, 5000);
     headerRenderer({ element: document.querySelector('.header_component') });
 }

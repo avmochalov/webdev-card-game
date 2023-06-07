@@ -149,6 +149,7 @@ body {
   background: #ffffff;
   border-radius: 4px;
   position: relative;
+  cursor: pointer;
 }
 .card_value__up {
   font-style: normal;

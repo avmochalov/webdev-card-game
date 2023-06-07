@@ -28,10 +28,15 @@ export function levelPageRenderer({ app }) {
                 card.replaceWith(targetCard);
                 if (clickedCard.length === 2) {
                     if (clickedCard[0] === clickedCard[1]) {
-                        alert('Вы победили!');
+                        setTimeout(function () {
+                            alert('Вы победили!');
+                        }, 100);
+
                         clickedCard = [];
                     } else {
-                        alert('Вы проиграли!');
+                        setTimeout(function () {
+                            alert('Вы проиграли!');
+                        }, 100);
                         clickedCard = [];
                     }
                 }

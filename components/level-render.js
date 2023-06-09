@@ -21,6 +21,7 @@ export function levelPageRenderer({ app }) {
             backSideCards.join('');
         let clickedCard = [];
         let controlArray = [];
+        let startTime = Number(new Date());
         for (const card of document.querySelectorAll('.card')) {
             card.addEventListener('click', (event) => {
                 event.stopPropagation();
@@ -33,15 +34,18 @@ export function levelPageRenderer({ app }) {
                         controlArray.push('win');
                         clickedCard = [];
                     } else {
-                        resultRenderer({ app }, 'loose');
-                        clickedCard = [];
+                        let finishTime = Number(new Date());
+                        let fullGameTime = (finishTime - startTime) / 1000;
+                        resultRenderer({ app }, 'loose', fullGameTime);
                     }
                 }
                 if (
                     controlArray.length ===
                     3 * Number(localStorage.getItem('Level'))
                 ) {
-                    resultRenderer({ app }, 'win');
+                    let finishTime = Number(new Date());
+                    let fullGameTime = (finishTime - startTime) / 1000;
+                    resultRenderer({ app }, 'win', fullGameTime);
                 }
             });
         }

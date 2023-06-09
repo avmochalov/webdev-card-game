@@ -1,6 +1,7 @@
 import { renderApp } from '../index.js';
+import { time } from './time.js';
 
-export function resultRenderer({ app }, result) {
+export function resultRenderer({ app }, result, fullGameTime) {
     app.appendChild(document.createElement('div')).classList.add('opacity');
     app.appendChild(document.createElement('div')).classList.add('result');
     document.querySelector('.result').innerHTML = `
@@ -11,7 +12,7 @@ export function resultRenderer({ app }, result) {
             result === 'win' ? 'Вы победили!' : 'Вы проиграли!'
         }</p>
         <p class="result_text__timer">Затраченное время:</p>
-        <p class="result_text__time">01.20</p>
+        <p class="result_text__time">${time(fullGameTime)}</p>
         <button type="submit" class="restart_button">Играть снова</button>
         `;
     for (const button of document.querySelectorAll('.restart_button')) {

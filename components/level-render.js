@@ -1,5 +1,6 @@
 import { cardsTableGenerate } from './cards-table.js';
 import { headerRenderer } from './header.js';
+import { resultRenderer } from './result_window.js';
 export function levelPageRenderer({ app }) {
     const appHtml = `<div class="header_component"></div>
     <div class="card_field grid_${localStorage.getItem('Level')}"> </div>
@@ -19,6 +20,7 @@ export function levelPageRenderer({ app }) {
         document.querySelector('.card_field').innerHTML =
             backSideCards.join('');
         let clickedCard = [];
+        let controlArray = [];
         for (const card of document.querySelectorAll('.card')) {
             card.addEventListener('click', (event) => {
                 event.stopPropagation();
@@ -28,17 +30,18 @@ export function levelPageRenderer({ app }) {
                 card.replaceWith(targetCard);
                 if (clickedCard.length === 2) {
                     if (clickedCard[0] === clickedCard[1]) {
-                        setTimeout(function () {
-                            alert('Вы победили!');
-                        }, 100);
-
+                        controlArray.push('win');
                         clickedCard = [];
                     } else {
-                        setTimeout(function () {
-                            alert('Вы проиграли!');
-                        }, 100);
+                        resultRenderer({ app }, 'loose');
                         clickedCard = [];
                     }
+                }
+                if (
+                    controlArray.length ===
+                    3 * Number(localStorage.getItem('Level'))
+                ) {
+                    resultRenderer({ app }, 'win');
                 }
             });
         }

@@ -19,11 +19,3 @@ export function resultRenderer({ app }, result, fullGameTime) {
         button.addEventListener('click', () => renderApp('start'));
     }
 }
-
-// `<div class="result">
-// <img src="./pic/win.svg" class="result_svg" alt="win">
-// <p class="result_text__header">Вы выиграли!</p>
-// <p class="result_text__timer">Затраченное время:</p>
-// <p class="result_text__time">01.20</p>
-// <button type="submit" class="restart_button">Играть снова</button>
-// </div>`;

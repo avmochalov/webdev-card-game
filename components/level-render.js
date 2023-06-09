@@ -2,22 +2,46 @@ import { cardsTableGenerate } from './cards-table.js';
 import { headerRenderer } from './header.js';
 export function levelPageRenderer({ app }) {
     const appHtml = `<div class="header_component"></div>
-    <div class="card_field"> </div>
+    <div class="card_field grid_${localStorage.getItem('Level')}"> </div>
 `;
     let backSideCards = [];
     for (let i = 0; i < 6 * Number(localStorage.getItem('Level')); i++) {
         backSideCards.push(
-            '<img src="./pic/backside.svg" alt="card-backside">'
+            `<div class="card" data-id='${i}'> <img src="./pic/backside.svg" alt="card-backside"> </div>`
         );
     }
     console.log(backSideCards);
     app.innerHTML = appHtml;
-    document.querySelector('.card_field').innerHTML = backSideCards.join('');
-    setTimeout(
-        () =>
-            (document.querySelector('.card_field').innerHTML =
-                cardsTableGenerate(backSideCards.length)),
-        2000
-    );
+    const cardTable = cardsTableGenerate(backSideCards.length);
+    document.querySelector('.card_field').innerHTML = cardTable.join('');
+
+    setTimeout(() => {
+        document.querySelector('.card_field').innerHTML =
+            backSideCards.join('');
+        let clickedCard = [];
+        for (const card of document.querySelectorAll('.card')) {
+            card.addEventListener('click', (event) => {
+                event.stopPropagation();
+                clickedCard.push(cardTable[card.dataset.id]);
+                let targetCard = document.createElement('div');
+                targetCard.innerHTML = cardTable[card.dataset.id];
+                card.replaceWith(targetCard);
+                if (clickedCard.length === 2) {
+                    if (clickedCard[0] === clickedCard[1]) {
+                        setTimeout(function () {
+                            alert('Вы победили!');
+                        }, 100);
+
+                        clickedCard = [];
+                    } else {
+                        setTimeout(function () {
+                            alert('Вы проиграли!');
+                        }, 100);
+                        clickedCard = [];
+                    }
+                }
+            });
+        }
+    }, 5000);
     headerRenderer({ element: document.querySelector('.header_component') });
 }

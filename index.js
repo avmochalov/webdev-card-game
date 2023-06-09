@@ -1,3 +1,4 @@
+import './style.css';
 import { START_PAGE, LEVEL_PAGE } from './routes.js';
 import { startPageRenderer } from './components/start-page.js';
 import { levelPageRenderer } from './components/level-render.js';

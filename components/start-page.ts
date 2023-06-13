@@ -1,6 +1,7 @@
-import { renderApp } from '../index.ts';
+import { renderApp } from '../index';
 
-export function startPageRenderer({ app }) {
+export function startPageRenderer({ app }: any) {
+    console.log(typeof app);
     const appHtml = `<div class="level_choice__wrapper">
     <div class="level_choice">
         <p class="level_choice__text">Выбери сложность</p>
@@ -26,7 +27,10 @@ export function startPageRenderer({ app }) {
         });
     }
 
-    document.querySelector('.start_button').addEventListener('click', () => {
-        renderApp('level');
-    });
+    (document.querySelector('.start_button') as HTMLElement).addEventListener(
+        'click',
+        () => {
+            renderApp('level');
+        }
+    );
 }

@@ -1,11 +1,11 @@
 import './style.css';
-import { START_PAGE, LEVEL_PAGE } from './routes.ts';
-import { startPageRenderer } from './components/start-page.ts';
-import { levelPageRenderer } from './components/level-render.ts';
+import { START_PAGE, LEVEL_PAGE } from './routes';
+import { startPageRenderer } from './components/start-page';
+import { levelPageRenderer } from './components/level-render';
 
 const suitArray = ['Ч', 'П', 'Б', 'К'];
 const cardValueArray = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'];
-export const cards = [];
+export const cards : string[]= [];
 
 for (const suit of suitArray) {
     for (const value of cardValueArray) {
@@ -13,7 +13,7 @@ for (const suit of suitArray) {
     }
 }
 
-export function renderApp(page) {
+export function renderApp(page: string) {
     const app = document.getElementById('app');
     if (page === START_PAGE) {
         startPageRenderer({ app });

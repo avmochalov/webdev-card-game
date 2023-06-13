@@ -1,10 +1,10 @@
-import { renderApp } from '../index.ts';
-import { time } from './time.ts';
+import { renderApp } from '../index';
+import { time } from './time';
 
-export function resultRenderer({ app }, result, fullGameTime) {
+export function resultRenderer({ app }: any, result: string, fullGameTime: number) {
     app.appendChild(document.createElement('div')).classList.add('opacity');
     app.appendChild(document.createElement('div')).classList.add('result');
-    document.querySelector('.result').innerHTML = `
+    (document.querySelector('.result') as HTMLElement).innerHTML = `
         <img src="${
             result === 'win' ? './pic/win.svg' : './pic/loose.svg'
         }" class="result_svg" alt="win">

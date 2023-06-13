@@ -1,6 +1,7 @@
-import { renderApp } from '../index.ts';
+import { renderApp } from '../index';
 
-export function headerRenderer({ element }) {
+export function headerRenderer({ element }: any) {
+    console.log(element);
     element.innerHTML = `<header class="header">
     <div class="timer">
         <div class="timer_min">
@@ -16,7 +17,7 @@ export function headerRenderer({ element }) {
         Начать заново
     </button>
     </header>`;
-    document
-        .querySelector('.restart_button')
+    (document
+        .querySelector('.restart_button') as HTMLElement)
         .addEventListener('click', () => renderApp('level'));
 }

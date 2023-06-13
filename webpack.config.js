@@ -8,7 +8,7 @@ module.exports = {
         process.env.NODE_ENV === 'production'
             ? 'hidden-source-map'
             : 'source-map',
-    entry: './index.js',
+    entry: './index.ts',
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),

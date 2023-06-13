@@ -31,7 +31,7 @@ export function levelPageRenderer({ app }: any) {
                 );
                 let targetCard = document.createElement('div');
                 targetCard.innerHTML =
-                    cardTable[Number((card as HTMLElement).dataset.id!)];
+                    cardTable[Number((card as HTMLElement).dataset.id!)]; // card.dataset.id
                 card.replaceWith(targetCard);
                 if (clickedCard.length === 2) {
                     if (clickedCard[0] === clickedCard[1]) {

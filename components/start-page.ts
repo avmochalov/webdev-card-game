@@ -1,4 +1,4 @@
-import { renderApp } from '../index.js';
+import { renderApp } from '../index.ts';
 
 export function startPageRenderer({ app }) {
     const appHtml = `<div class="level_choice__wrapper">

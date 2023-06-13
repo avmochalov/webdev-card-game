@@ -1,6 +1,6 @@
-import { cardsTableGenerate } from './cards-table.js';
-import { headerRenderer } from './header.js';
-import { resultRenderer } from './result_window.js';
+import { cardsTableGenerate } from './cards-table.ts';
+import { headerRenderer } from './header.ts';
+import { resultRenderer } from './result_window.ts';
 export function levelPageRenderer({ app }) {
     const appHtml = `<div class="header_component"></div>
     <div class="card_field grid_${localStorage.getItem('Level')}"> </div>

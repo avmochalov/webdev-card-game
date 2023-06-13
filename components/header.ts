@@ -1,4 +1,4 @@
-import { renderApp } from '../index.js';
+import { renderApp } from '../index.ts';
 
 export function headerRenderer({ element }) {
     element.innerHTML = `<header class="header">

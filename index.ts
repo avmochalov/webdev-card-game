@@ -1,7 +1,7 @@
 import './style.css';
-import { START_PAGE, LEVEL_PAGE } from './routes.js';
-import { startPageRenderer } from './components/start-page.js';
-import { levelPageRenderer } from './components/level-render.js';
+import { START_PAGE, LEVEL_PAGE } from './routes.ts';
+import { startPageRenderer } from './components/start-page.ts';
+import { levelPageRenderer } from './components/level-render.ts';
 
 const suitArray = ['Ч', 'П', 'Б', 'К'];
 const cardValueArray = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'];

@@ -1,4 +1,4 @@
-export function time(fullGameTime) {
+export function time(fullGameTime: number) {
     console.log(fullGameTime);
     let min = String(Math.round(fullGameTime / 60));
     console.log(min);

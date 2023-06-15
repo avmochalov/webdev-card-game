@@ -1,6 +1,6 @@
 import { renderApp } from '../index';
 
-export function headerRenderer({ element }: any) {
+export function headerRenderer({ element }: {element:HTMLElement}) {
     console.log(element);
     element.innerHTML = `<header class="header">
     <div class="timer">

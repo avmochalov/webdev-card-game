@@ -1,7 +1,7 @@
 import { cardsTableGenerate } from './cards-table';
 import { headerRenderer } from './header';
 import { resultRenderer } from './result_window';
-export function levelPageRenderer({ app }: any) {
+export function levelPageRenderer({ app }: {app:HTMLElement}) {
     const appHtml = `<div class="header_component"></div>
     <div class="card_field grid_${localStorage.getItem('Level')}"> </div>
 `;
@@ -18,7 +18,7 @@ export function levelPageRenderer({ app }: any) {
         cardTable.join('');
 
     setTimeout(() => {
-        (document.querySelector('.card_field') as HTMLElement).innerHTML =
+        (document.querySelector('.card_field') as HTMLElement)!.innerHTML =
             backSideCards.join('');
         let clickedCard: string[] = [];
         let controlArray: string[] = [];
@@ -27,11 +27,11 @@ export function levelPageRenderer({ app }: any) {
             card.addEventListener('click', (event) => {
                 event.stopPropagation();
                 clickedCard.push(
-                    cardTable[Number((card as HTMLElement).dataset.id!)]
+                    cardTable[Number((card as HTMLElement).dataset.id)]
                 );
                 let targetCard = document.createElement('div');
                 targetCard.innerHTML =
-                    cardTable[Number((card as HTMLElement).dataset.id!)]; // card.dataset.id
+                    cardTable[Number((card as HTMLElement).dataset.id)]; // card.dataset.id
                 card.replaceWith(targetCard);
                 if (clickedCard.length === 2) {
                     if (clickedCard[0] === clickedCard[1]) {

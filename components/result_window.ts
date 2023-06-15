@@ -1,7 +1,7 @@
 import { renderApp } from '../index';
 import { time } from './time';
 
-export function resultRenderer({ app }: any, result: string, fullGameTime: number) {
+export function resultRenderer({ app }: {app:HTMLElement}, result: string, fullGameTime: number) {
     app.appendChild(document.createElement('div')).classList.add('opacity');
     app.appendChild(document.createElement('div')).classList.add('result');
     (document.querySelector('.result') as HTMLElement).innerHTML = `

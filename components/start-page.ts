@@ -1,6 +1,6 @@
 import { renderApp } from '../index';
 
-export function startPageRenderer({ app }: any) {
+export function startPageRenderer({ app }: {app:HTMLElement}) {
     console.log(typeof app);
     const appHtml = `<div class="level_choice__wrapper">
     <div class="level_choice">

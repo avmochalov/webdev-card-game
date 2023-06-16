@@ -1,9 +1,9 @@
-import { time } from '../components/time';
 import { strict as assert } from 'assert';
-{
-    const originalTime = 90;
-    const expected = '01.30';
-
+import { describe, expect, it } from '@jest/globals';
+import { time } from '../components/time';
+it('should tagret time format 00.00', () => {
+    const originalTime = 62;
+    const expected = '01.02';
     const result = time(originalTime);
-    assert.equal(result, expected);
-}
+    expect(expected).toBe(result);
+});

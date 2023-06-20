@@ -1,5 +1,4 @@
-import { strict as assert } from 'assert';
-import { describe, expect, it } from '@jest/globals';
+import { expect, it } from '@jest/globals';
 import { time } from '../components/time';
 it('should tagret time format 00.00', () => {
     const originalTime = 62;

@@ -1,4 +1,3 @@
-import { strict as assert } from 'assert';
 import { describe, expect, it } from '@jest/globals';
 import { cardsTableGenerate } from '../components/cards-table';
 

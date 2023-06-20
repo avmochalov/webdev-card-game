@@ -32,7 +32,7 @@
     "main": "index.js",
     "scripts": {
         "format": "prettier --write ./*.js && prettier --write ./**/*.js",
-        "lint:js": "eslint ./**/*.js && eslint ./*.js",
+        "lint:ts": "eslint ./**/*.ts && eslint ./*.ts",
         "lint:scss": "stylelint ./*.scss",
         "build": "NODE_ENV=production webpack",
         "start": "webpack-dev-server --open",

@@ -1,6 +1,6 @@
 import { renderApp } from '../index';
 
-export function headerRenderer({ element }: {element:HTMLElement}) {
+export function headerRenderer({ element }: { element: HTMLElement }) {
     console.log(element);
     element.innerHTML = `<header class="header">
     <div class="timer">
@@ -17,7 +17,8 @@ export function headerRenderer({ element }: {element:HTMLElement}) {
         Начать заново
     </button>
     </header>`;
-    (document
-        .querySelector('.restart_button') as HTMLElement)
-        .addEventListener('click', () => renderApp('level'));
+    (document.querySelector('.restart_button') as HTMLElement).addEventListener(
+        'click',
+        () => renderApp('level')
+    );
 }

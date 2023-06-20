@@ -54,5 +54,9 @@ export function levelPageRenderer({ app }: { app: HTMLElement }) {
             });
         }
     }, 5000);
-    headerRenderer({ element: document.querySelector('.header_component') });
+    // headerRenderer({ element: document.querySelector('.header_component') });
+    const headerElement = document.querySelector('.header_component');
+    if (headerElement instanceof HTMLElement) {
+        headerRenderer({ element: headerElement });
+    }
 }

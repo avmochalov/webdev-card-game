@@ -33,7 +33,7 @@
     "scripts": {
         "format": "prettier --write ./*.js && prettier --write ./**/*.js",
         "lint:ts": "eslint ./**/*.ts && eslint ./*.ts",
-        "lint:scss": "stylelint ./*.scss",
+        "lint:scss": "stylelint ./*.scss --fix",
         "build": "NODE_ENV=production webpack",
         "start": "webpack-dev-server --open",
         "test": "jest"

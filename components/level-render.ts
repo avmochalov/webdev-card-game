@@ -1,3 +1,4 @@
+import { cards } from '../index';
 import { cardsTableGenerate } from './cards-table';
 import { headerRenderer } from './header';
 import { resultRenderer } from './result_window';
@@ -13,7 +14,7 @@ export function levelPageRenderer({ app }: { app: HTMLElement }) {
     }
     console.log(backSideCards);
     app.innerHTML = appHtml;
-    const cardTable = cardsTableGenerate(backSideCards.length);
+    const cardTable = cardsTableGenerate(backSideCards.length, cards);
     (document.querySelector('.card_field') as HTMLElement).innerHTML =
         cardTable.join('');
 

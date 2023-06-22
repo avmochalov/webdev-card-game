@@ -7,7 +7,7 @@ export function levelPageRenderer({ app }: { app: HTMLElement }) {
     const appHtml = `<div class="header_component"></div>
     <div class="card_field grid_${localStorage.getItem('Level')}"> </div>
 `;
-    const backSideCards: string[] = []:
+    const backSideCards: string[] = [];
     for (let i = 0; i < 6 * Number(localStorage.getItem('Level')); i++) {
         backSideCards.push(
             `<div class="card" data-id='${i}'> <img src="./pic/backside.svg" alt="card-backside"> </div>`

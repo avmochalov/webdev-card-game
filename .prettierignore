@@ -1,3 +1,6 @@
 node_modules/
 .stylelintrc.yml
 dist/
+jest.config.js
+.eslintrc.cjs
+webpack.config.js

@@ -5,7 +5,7 @@ import { levelPageRenderer } from './components/level-render';
 
 const suitArray = ['Ч', 'П', 'Б', 'К'];
 const cardValueArray = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'];
-export const cards : string[]= [];
+export const cards: string[] = [];
 
 for (const suit of suitArray) {
     for (const value of cardValueArray) {

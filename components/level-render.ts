@@ -2,6 +2,7 @@ import { cards } from '../index';
 import { cardsTableGenerate } from './cards-table';
 import { headerRenderer } from './header';
 import { resultRenderer } from './result_window';
+import { timer } from './timer';
 export function levelPageRenderer({ app }: { app: HTMLElement }) {
     const appHtml = `<div class="header_component"></div>
     <div class="card_field grid_${localStorage.getItem('Level')}"> </div>
@@ -24,6 +25,7 @@ export function levelPageRenderer({ app }: { app: HTMLElement }) {
         let clickedCard: string[] = [];
         const controlArray: string[] = [];
         const startTime = Number(new Date());
+        timer(controlArray);
         for (const card of document.querySelectorAll('.card')) {
             card.addEventListener('click', (event) => {
                 event.stopPropagation();
